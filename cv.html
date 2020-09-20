@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CV by Max Pozdniakov</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <meta charset="utf-8"/>
+    </head>   
+    <body>
+        <div class="page">
+            <div class="info">
+                <h1><strong>Max Pozdniakov</strong></h1>
+                <p><strong>Phone: +375255477363</strong></p>
+                <p><strong>Email: maxpozdniakow@gmail.com</strong></p>
+                <p><strong>Skype: max.pozdniakov1</strong></p>
+
+
+            </div>
+        
+
+
+        
+        
+        
+        <div class="about_me">
+          <h3 id="about"><strong>About me</strong></h3>
+          <p id="text">  Hello, my name is Max. I am an interpreter of the Polish language. About motivation. 
+              I got up from a wheelchair. I passed the selection on the web development scholarship by Google. 
+              I got a lot of friends, the necessary skills for work became a step closer to the dream. 
+              Now, I enrolled in retraining at BSUIR, majoring in “Software Engineer” in addition to Java Script, 
+              I study Python. 
+              I do sports in my spare time took second place at the Belarusian Weightlifting Championship, 
+              learn Deutsch and English languages. And here’s another chance to prove myself. And I accept the challenge.</p>
+
+
+    
+        </div>
+
+        
+        
+        <div class="exp">
+            <h3 id="exp">Experience</h3>
+            <p><strong>2015 - 2018                              Freelancer</strong></p>
+             <p><em>Interpreter of Polish\Russian
+                Translations of technical subjects and business correspondence.</em></p>
+               
+                <p><strong>08/2015 - 05/2016                    Kefir PR</strong></p>
+                <p><em>Content manager. Working with the CMS WordPress. Keeping the groups in social networks
+                </em></p>
+                   
+                  
+        </div>
+        
+        
+        
+        <div class="edu">
+            <h3 id="edu">Education</h3>
+            <p><strong>2019 - present  BSUIR, Information systems. Developer</strong></p>
+            <p><strong>09/2010 - 06/2015    GRSU, Slavic philology. Interpreter of Polish language</strong></p>
+
+
+        </div>
+        
+        
+        <div class="skills">
+            <h3 id="skl">Skills</h3>
+            <ul id="ls">
+               <li>Networks knowledge    Middle</li> 
+                
+               <li>MS Office        Basic</li>
+                
+               <li>Python           Basic</li> 
+                
+               <li> Java Script     Basic</li> 
+                
+               <li>SQL              Basic</li> 
+                
+               <li>Jira            Basic</li>
+                
+               <li> Powershell      Basic</li>
+                
+               <li> C#              Basic</li>
+                
+                <li>/Github    Basic</li>
+                
+               <li> HTML/CSS     Basic</li>
+                
+                
+            </ul>
+
+
+
+    
+        </div>
+
+
+        <div class="codeBlocks">
+            <h3 id="skils">Latest Code</h3>
+            <pre>
+                <code>
+                using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace OOP_Lab9
+{
+   class Program
+   {
+       static int x = 0;
+       static object locker = new object();
+
+       static void Main(string[] args)
+       {
+           Console.WriteLine("Work of threads with given priorities");
+           Thread thread1 = new Thread(PrintEven1);
+           Thread thread2 = new Thread(PrintEven2);
+           Thread thread3 = new Thread(PrintEven3);
+
+           thread1.Priority = ThreadPriority.Highest;
+           thread2.Priority = ThreadPriority.Normal;
+           thread3.Priority = ThreadPriority.Lowest;
+
+           thread1.Start();
+           thread2.Start();
+           thread3.Start();
+
+           Thread.Sleep(11000);
+           Console.WriteLine("Press any key to start the counter using Monitor ...");
+           Console.ReadKey();
+
+           Console.WriteLine("\n?Threads Works Using Monitor");
+
+           for (int i = 1; i < 4; i++)
+           {
+               Thread thread = new Thread(new ThreadStart(PrintEvenMonitor));
+               thread.Name = "Flow " + i.ToString();
+               thread.Start();
+           }
+           Console.ReadKey();
+       }
+
+       #region //Methods
+       static void PrintEven1()
+       {
+           for (int i = 0; i < 100; i++)
+           {
+               if (i % 2 == 0 && i != 0)
+               {
+                   Console.WriteLine($"Flow 1 output- {i}");
+               }
+               Thread.Sleep(10);
+           }
+       }
+
+       static void PrintEven2()
+       {
+           for (int i = 0; i < 100; i++)
+           {
+               if (i % 2 == 0 && i != 0)
+               {
+                   Console.WriteLine($"flow 2 output {i}");
+               }
+               Thread.Sleep(10);
+           }
+       }
+
+       static void PrintEven3()
+       {
+           for (int i = 0; i < 100; i++)
+           {
+               if (i % 2 == 0 && i != 0)
+               {
+                   Console.WriteLine($"Flow 3 outputs - {i}");
+               }
+               Thread.Sleep(10);
+           }
+       }
+       #endregion
+
+      
+       public static void PrintEvenMonitor()
+       {
+           try
+           {
+               Monitor.Enter(locker);
+               x = 1;
+               for (int i = 0; x < 100; i++)
+               {
+                   if (x % 2 == 0 && x != 0)
+                   {
+                       Console.WriteLine("{0}: {1}", Thread.CurrentThread.Name, x);
+                   }
+                   x++;
+                   Thread.Sleep(10);
+               }
+           }
+           finally
+           {
+               Monitor.Exit(locker);
+           }
+       }
+   }
+</code>
+            </pre>
+
+        </div>
+        
+
+        <div class="lang">
+            <h3 id="lg">Languages</h3>
+
+            <ul>
+                <li>Polish       C1</li>
+                
+                <li>English      B2 </li>  
+                
+                <li>Serbian      A2</li>                                                       
+                
+                <li> German      A2</li>                                                      
+                
+                </ul>
+
+    
+        </div>
+        
+
+        <div class="cerf">
+            <h3 id="crf">Certificates</h3>
+        <ol>
+
+
+            <li>CCNA Discovery: Networking for Home and Small Business</li>
+            <li>Linux Administration Bootcamp</li>
+            <li>WSG Polish language level C1</li>
+           
+        </ol>
+
+    
+        </div>
+
+
+        <div class="courses">
+            <h3 id="crf">Courses</h3>
+
+            <ul>
+
+
+                <li><strong>11/2019 - 12/2019 </strong> QA software testing by Stepik</li>
+                <li><strong>10/2019 - 11/2019 </strong> Data Base Essentials</li>
+                <li><strong>08/2019 - 10/2019 </strong> Inroduction to Python by Epam</li>
+                <li><strong>11/2017 - 03/2018 </strong>  Google Web Dev Scholarship</li>
+                <li><strong>11/2011 - 01/2012 </strong> CCNA Discovery</li>
+                
+               
+            </ul>
+    
+        </div>
+
+    </body>
+
+
+    </head>
+
+
+</html>
+
+
+
+
